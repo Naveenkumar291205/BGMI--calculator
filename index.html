@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator - Health Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-animation"></div>
+    <div class="container">
+        <div class="header">
+            <h1>💪 BMI Health Tracker</h1>
+            <div class="unit-toggle">
+                <button id="metric-btn" class="unit-btn active">Metric</button>
+                <button id="imperial-btn" class="unit-btn">Imperial</button>
+            </div>
+        </div>
+
+        <form id="bmi-form">
+            <div class="input-group">
+                <label for="height">Height <span id="height-unit">(cm)</span>:</label>
+                <input type="number" id="height" required min="1" step="0.1" placeholder="Enter height">
+            </div>
+            <div class="input-group">
+                <label for="weight">Weight <span id="weight-unit">(kg)</span>:</label>
+                <input type="number" id="weight" required min="1" step="0.1" placeholder="Enter weight">
+            </div>
+            <button type="submit" class="calculate-btn">📊 Calculate BMI</button>
+        </form>
+
+        <div id="result" class="result hidden">
+            <div class="result-header">
+                <h2>Your BMI: <span id="bmi-value"></span></h2>
+                <p id="bmi-category" class="category-badge"></p>
+            </div>
+
+            <div class="bmi-gauge">
+                <div id="gauge-fill" class="gauge-fill"></div>
+                <div class="gauge-labels">
+                    <span>Underweight</span>
+                    <span>Normal</span>
+                    <span>Overweight</span>
+                    <span>Obese</span>
+                </div>
+            </div>
+
+            <div class="health-info">
+                <h3>Health Insights</h3>
+                <p id="health-tip"></p>
+                <div id="recommendations" class="recommendations"></div>
+            </div>
+        </div>
+
+        <div class="history-section">
+            <h3>📈 Recent Calculations</h3>
+            <div id="history" class="history-list"></div>
+            <button id="clear-history" class="clear-btn">Clear History</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
